@@ -2,37 +2,43 @@
 <!-- saved from url=(0114)file:///C:/Users/Savas/Documents/GitHub/Online-Delivery-Web-Aplication/onlineDeliveryFrontent/template/mypage.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <link rel="stylesheet" href="mycss.css">
-        <link rel="stylesheet" href="font-awesome.min.css">
         <title>Online Delivery</title>
     </head>
+    <nav>
+      <a class="logo" href="mypage.html">OnlineDelivery</a>
+      <div class="headerright">
+        <a class="headerconfig" href="mypage.html">ABOUT US</a>
+        <a class="headerconfig" href="mypage.html">MENU</a>
+        <div class="dropdown">
+          <button class="dropbutton">GR</button>
+          <div class="dropdown-content">
+            <a href="">Greek</a>
+            <a href="">English</a>
+          </div>
+        </div>
+        <a class="headerconfig" href="">SIGN IN</a>
+      </div>
+    </nav>
     <body>
       <div class="main-container">
-        <div class="header-container">
-          <header class="row">
-            <div>
-              <a class="logo" href="mypage.html">OnlineDelivery</a>
-            </div>
-            <div>
-              <a class="headerconfig" href="mypage.html">ABOUT US</a>
-              <a class="headerconfig" href="mypage.html">MENU</a>
-              <div class="dropdown">
-                <button class="dropbtn">GR</button>
-                <div class="dropdown-content">
-                  <a href="">Greek</a>
-                  <a href="">English</a>
-                </div>
-              </div>
-              <a class="headerconfig" href="singin.html">SIGN IN</a>
-            </div>
-          </header>
-        </div>  
-        <main class="order">
-          <form>
-            <button class="button1" formaction="order.html">See Menu & Order</button>
-          </form>
-        </main>
-        <footer class="row center">All right reserved Copyrights</footer>
+        <form>
+          <button class="button1" formaction="order.html">See Menu & Order</button>
+        </form>
       </div>
-    
-
-</body></html>
+      <footer>
+        <section class="main-footer">
+          <ul class="legal-list">
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+          <ul class="socialmedia-list">
+            <li><a href="#"><i class="facebook"></i></a>Facebook</li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a>Instagram</li>
+          </ul>
+          <ul class="copyrights">
+            <li>&copy; 2021 Copyright.</li>
+          </ul>
+        </section>
+      </footer>   
+  </body>
+</html>

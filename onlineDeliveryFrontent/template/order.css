@@ -1,84 +1,62 @@
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
 }
+
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #d4d4d4;
 }
 
-/* Layout */
-.main-container {
-  background-image: url(asian1.jpg);
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100% 50%;
-  height: 100%;
-}
-
-.main-container img {
-  display: flex;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  background-color: #ffffff;
-}
-
-.headerright {
-  display: flex;
-  align-items: center;
-}
-
-main {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  /*border: 3px solid #a04848;*/
-}
-footer {
-  position: absolute;
-  width: 100%;
-  bottom: 100%;
-  background-color: #a04848;
+/* Global staff */
+header a {
   color: #ffffff;
+  padding: 1rem;
 }
 
 a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #ff8000;
+/*Navigator Staff*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
 }
 
 .headerconfig {
-  color: #ffffff;
-  padding: 1rem;
+  color: #a04848;
+  margin-right: 5px;
 }
 
-.logo {
+a.logo {
   color: #a04848;
   font-size: 3rem;
   font-weight: bold;
+  margin-left: 5px;
 }
 
-a.headerconfig {
-  color: #a04848;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row.center {
+  justify-content: center;
 }
 
 /* Dropdown Button */
-.dropbtn {
+.dropbutton {
   background-color: #a04848;
   color: white;
-  padding: 16px;
+  padding: 8px;
   font-size: 16px;
   border: none;
 }
@@ -89,38 +67,57 @@ a.headerconfig {
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 12px;
   text-decoration: none;
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbutton {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
+  outline: none;
+}
+
+/* Main Container */
+.main-container {
+  flex: 1;
+  background-image: url(asian1.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+}
+
+.main-container img {
+  display: flex;
+}
+
+/* Menu staff*/
+main {
+  position: absolute;
+  top: 50%;
+  width: 100%;
 }
 
 .onlineDeliver-menu-container {
-  /* border: blueviolet solid; */
   display: flex;
   margin-right: 10px;
   margin-top: 20px;
@@ -410,3 +407,56 @@ main > header {
   outline: none;
 }
 
+/*Footer staff*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #a04848;
+  color: #ffffff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #eee;
+}
+
+.main-footer {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-footer ul {
+  list-style-type: none;
+  padding-inline-start: 15px;
+}
+
+
+.socialmedia-list {
+  display: flex;
+}
+
+.socialmedia-list li {
+  margin-right: 20px;
+}
+
+.legal-list {
+  display: flex;
+}
+
+.legal-list li {
+  margin-right: 20px;
+}
+
+.legal-list a:hover {
+  text-decoration: underline;
+}
+
+.copyrights {
+  margin-right: 15px;
+}
+
+li::marker {
+  display: none;
+}
