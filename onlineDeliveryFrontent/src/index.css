@@ -173,7 +173,7 @@ a.logo {
   margin-top: 4px;
 }
 
-.about-us h {
+.about-us h1 {
   display: inline-block;
 }
 
@@ -194,7 +194,7 @@ a.logo {
   margin-top: 0px;
 }
 
-.description h {
+.description h1 {
   margin-right: auto;
   margin-left: 10px;
   margin-top: -35px;
@@ -287,20 +287,20 @@ li::marker {
   text-shadow: -3px 2px 4px #fefefe;
 }
 
-.row-of-menu {
+.categories {
   min-width: 10%;
   margin-left: 16px;
   margin-right: 1px;
   margin-top: 14px;
 }
 
-.row-of-menu > header {
+.categories > header {
   font-size: 16px;
   color: rgb(188 101 101);
   text-shadow: 1px 6px 6px #9b8d8d;
 }
 
-.row-of-menu > a {
+.categories > a {
   font-size: 20px;
   color: rgb(178 142 142);
   margin: 1%;
@@ -496,7 +496,7 @@ li::marker {
   margin-bottom: 0px;
 }
 
-.item h {
+.item h1 {
   margin-left: -17px;
   color: #d34646;
   font-size: 20px;

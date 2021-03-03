@@ -8,18 +8,18 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <a class="logo" href="/">OnlineDelivery</a>
-        <div class="headerright">
-          <a class="headerconfig" href="/#aboutus">ABOUT US</a>
-          <a class="headerconfig" href="/order">MENU</a>
-          <div class="dropdown">
-            <button class="dropbutton">GR</button>
-            <div class="dropdown-content">
+        <a className="logo" href="/">OnlineDelivery</a>
+        <div className="headerright">
+          <a className="headerconfig" href="/#aboutus">ABOUT US</a>
+          <a className="headerconfig" href="/order">MENU</a>
+          <div className="dropdown">
+            <button className="dropbutton">GR</button>
+            <div className="dropdown-content">
               <a href="">Greek</a>
               <a href="">English</a>
             </div>
           </div>
-          <a class="headerconfig" href="/signin">SIGN IN</a>
+          <a className="headerconfig" href="/signin">SIGN IN</a>
         </div>
       </nav>
       <Switch>

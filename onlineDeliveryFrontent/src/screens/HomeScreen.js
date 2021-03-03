@@ -15,33 +15,33 @@ export default function HomeScreen (){
             <img src={sushi}/>
             </div>
             <div className="about-us" id="aboutus">
-            <div className="text-header">
-                <div className="description">
-                <h>About us<hr/></h>
-                <p>An idea became reality</p>
+                <div className="text-header">
+                    <div className="description">
+                    <h1>About us<hr/></h1>
+                    <p>An idea became reality</p>
+                    </div>
+                    <div>
+                    <img src={aboutus}/>
+                    </div>
                 </div>
-                <div>
-                <img src={aboutus}/>
+                <div className="text-header">
+                    <div>
+                    <img src={shop}/>
+                    </div>
+                    <div className="description">
+                    <h1>Our location<hr/></h1>
+                    <p>The restaurant is located </p>
+                    </div>
                 </div>
-            </div>
-            <div className="text-header">
-                <div>
-                <img src={shop}/>
+                <div className="text-header">
+                    <div className="description">
+                    <h1>Our Menu<hr/></h1>
+                    <p>Japanese Chinese staff with modern notes.</p>
+                    </div>
+                    <div>
+                    <img src={menu}/>
+                    </div>
                 </div>
-                <div className="description">
-                <h>Our location<hr/></h>
-                <p>The restaurant is located </p>
-                </div>
-            </div>
-            <div className="text-header">
-                <div className="description">
-                <h>Our Menu<hr/></h>
-                <p>Japanese Chinese staff with modern notes.</p>
-                </div>
-                <div>
-                <img src={menu}/>
-                </div>
-            </div>
             </div>
         </div>
     );

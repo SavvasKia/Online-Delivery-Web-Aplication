@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function SignIn (){
     return (
-        <div class="main-container">
-            <form class="singinForm" action="">
-                <div class="singinContainer">
+        <div className="main-container">
+            <form className="singinForm" action="">
+                <div className="singinContainer">
                     <h1>Sign In</h1>
                     <p>Please fill in this form to create an account.</p>
                     <hr/>
@@ -20,19 +20,19 @@ export default function SignIn (){
                 
                     <p>By creating an account you agree to our <a href="#" >Terms & Privacy</a>.</p>
                 
-                    <div class="defaultbtns">
-                        <button type="button" class="cancelbtn"><b>Cancel</b></button>
-                        <button type="submit" class="signupbtn"><b>Sign Up</b></button>
+                    <div className="defaultbtns">
+                        <button type="button" className="cancelbtn"><b>Cancel</b></button>
+                        <button type="submit" className="signupbtn"><b>Sign Up</b></button>
                     </div>
                     <div className="alternativeSingIn">
-                        <button type="button" class="Facebookbtn"><b>Facebook</b></button>
-                        <button type="submit" class="Googlebtn"><b>Google</b></button>
+                        <button type="button" className="Facebookbtn"><b>Facebook</b></button>
+                        <button type="submit" className="Googlebtn"><b>Google</b></button>
                     </div>
                 </div>
             </form>
 
-            <form class="singupForm" action="">
-                <div class="singupContainer">
+            <form className="singupForm" action="">
+                <div className="singupContainer">
                     <h1>Sign Up</h1>
                     <p>Please fill in this form to create an account.</p>
                     <hr/>
@@ -54,9 +54,9 @@ export default function SignIn (){
                 
                     <p>By creating an account you agree to our <a href="#" >Terms & Privacy</a>.</p>
                 
-                    <div class="clearfix">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="signupbtn">Sign Up</button>
+                    <div className="clearfix">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" className="cancelbtn">Cancel</button>
+                        <button type="submit" className="signupbtn">Sign Up</button>
                     </div>
                 </div>
             </form>
