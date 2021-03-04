@@ -1,14 +1,17 @@
 const data = {
     menu: [
         {
-            id:'Sushi',
+            id:'0',
+            name:'Sushi',
             staff: [
                 {
-                    name: 'shashimo',
+                    id:"00",
+                    name: 'shashimi',
                     price: '12.11',
                     description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
                 },
                 {
+                    id:"01",
                     name: 'kouraki',
                     price: '13.11',
                     description: 'Fresh coliander, fresh goufa, fresh oregano'
@@ -16,13 +19,16 @@ const data = {
             ]
         },
         {
-            id:'Salad',
+            id:'1',
+            name:'Salad',
             staff: [
                 {
-                name: 'Greek Salad',
-                price: '9.11',
-                description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
+                    id:"10",
+                    name: 'Greek Salad',
+                    price: '9.11',
+                    description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
                 },{
+                    id:"11",
                     name: 'American Salad',
                     price: '5.11',
                     description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
@@ -30,13 +36,16 @@ const data = {
             ]
         },
         {
-            id:'Starter',
+            id:'2',
+            name:'Starter',
             staff: [
                 {
-                name: 'Tzatziki',
-                price: '6.11',
-                description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
+                    id:"20",
+                    name: 'Tzatziki',
+                    price: '6.11',
+                    description: 'Fresh tomatoes, fresh mozzarella, fresh basil'
                 },{
+                    id:"21",
                     name: 'Greek Skordalia',
                     price: '5.11',
                     description: 'Fresh tomatoes, fresh mozzarella, fresh basil'

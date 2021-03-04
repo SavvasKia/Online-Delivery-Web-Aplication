@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import Order from './screens/Order';
 import SignIn from './screens/SignIn';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Switch>
         <Route path="/order" component={Order}></Route>
         <Route path="/signin" component={SignIn}></Route>
+        <Route path="/product" component={ProductScreen}></Route>
         <Route path="/" component={HomeScreen}></Route>
       </Switch>
       <footer>

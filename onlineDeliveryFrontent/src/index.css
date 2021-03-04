@@ -1,25 +1,14 @@
-html {
-  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+html,body {
   margin: 0;
-  height: 100vh;
-  font-size: 1.6rem;
+  height: 100%;
+  font-size: 62.5%;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #171717;
 }
 
 /* Global staff */
-header a {
-  color: #ffffff;
-  padding: 1rem;
-}
-
 a {
   text-decoration: none;
 }
@@ -28,8 +17,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #171717;
+  font-size: 18px;
 }
 
 .headerconfig {
@@ -100,39 +88,40 @@ a.logo {
 }
 
 /* Main Container */
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
 .main-container {
-  flex: 1 1 auto;
+  flex: 1;
   justify-content: space-evenly;
   background-color: #171717;
 }
 
 .image {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image img {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .image-button {
   position: absolute;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
 }
 
 .image-button p {
     color: #f5f5f5;
-    width: 600px;
+    width: 100%;
     font-size: 40px;
     text-shadow: -1px 20px 13px #000000
 }
@@ -162,26 +151,28 @@ a.logo {
 /*Staff about the shop*/
 .about-us {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
+  
   margin-top: 12px;
 }
 
 .about-us img {
-  width: 400px;
-  height: 400px;
-  margin-top: 4px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .about-us h1 {
-  display: inline-block;
+  display: inline-flex;
+  text-decoration: underline;
+  font-size: 30px;
 }
 
 .text-header {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 800px;
+  width: 80%;
   height: 400px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -190,28 +181,19 @@ a.logo {
 }
 
 .description {
-  width: 400px;
-  margin-top: 0px;
+  width: 50%;
+  height: 100%;
+  margin: 0px -20px 0px 20px;
 }
 
-.description h1 {
-  margin-right: auto;
-  margin-left: 10px;
-  margin-top: -35px;
-  font-size: 30px;
+.img-description {
+  width: 50%;
+  height: 100%;
 }
 
-.description hr {
-  background-color: #000000;
-  margin-top: -2px;
-  margin-bottom: 0px;
-}
-
-.text-header p {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 0px;
+.description p {
   font-size: 20px;
+  margin: 0px 0px 0px 20px;
 }
 
 /*Footer staff*/
@@ -220,6 +202,9 @@ footer {
   flex-wrap: wrap;
   background-color: #171717;
   color: #a04848;
+  
+  
+  font-size: 15px;
 }
 
 footer a {
@@ -237,6 +222,7 @@ footer a {
 .main-footer ul {
   list-style-type: none;
   padding-inline-start: 15px;
+  margin: 5px 0 5px 0;
 }
 
 
@@ -271,18 +257,17 @@ li::marker {
 /*order.js*/
 .onlineDeliver-menu-container {
   display: flex;
+  flex:1;
   margin-right: 10px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .main-header {
   display: flex;
   font-size: 41px;
-  align-items: center;
   justify-content: center;
   color: #cd8c8c;
-  background-color: #171717;
-  height: 6%;
   box-shadow: 0 4px 2px -2px rgb(255 142 142);
   text-shadow: -3px 2px 4px #fefefe;
 }
@@ -314,8 +299,18 @@ li::marker {
   margin-left: 1px;
   margin-right: 1px;
   min-width: 59%;
-  height: 500px;
   overflow-y: scroll;
+}
+
+.modal-element {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
 }
 
 .menu-specific::-webkit-scrollbar {
@@ -363,14 +358,11 @@ li::marker {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
   color: #d14f4f;
   background-color: #ffffff;
   width: 30%;
   height: fit-content;
-  margin: 5px;
-  margin-left: 6px;
-  margin-right: 1px;
+  margin: 5px 2px 4px 5px;
   border: 3px rgb(255, 255, 255) solid;
   box-shadow: 0px 0px 15px 4px rgb(158 158 158);
 }
@@ -389,7 +381,6 @@ li::marker {
   display: flex;
   margin-left: 16px;
   margin-top: -7px;
-  margin-bottom: 10px;
 }
 
 .location {
@@ -397,13 +388,13 @@ li::marker {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: normal;
+  margin-bottom: 10px;
 }
 
 .location > div > img {
   width: 24px;
   height: 23px;
-  margin-right: 6px;
-  margin-left: -16px;
+  margin: 0 6px 0 -16px;
 }
 
 .location > div > p {
@@ -433,10 +424,7 @@ li::marker {
   align-items: center;
   background-color: #989696;
   border: none;
-  margin-top: -21px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 18px;
+  margin: -10px 15px 5px 15px;
   height: 30px;
   font-size: 15px;
 }
@@ -470,30 +458,27 @@ li::marker {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: normal;
+  
 }
 
 .split {
   width: 100%;
   height: 1px;
   background-color: black;
-  margin-bottom: 7px;
-  margin-top: -15px;
+  margin: 0;
 }
 
 .items p {
-  margin-top: -10px;
-  margin-left: 6px;
-  margin-bottom: 10px;
+  margin: -17px 0 10px 6px;
   color: #622121;
+  font-size: 17px;
 }
 
 .item {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin-right: 16px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0 16px 0 0;
 }
 
 .item h1 {
@@ -510,8 +495,9 @@ li::marker {
   background-size: 20px 20px;
   background-color: transparent;
   color: transparent;
-  width: 21px;
+  width: 26px;
   border: none;
+  margin: 10px 0px 10px 0px;
 }
 .cancelItem:hover {
   background-color: #d34646;
@@ -524,7 +510,7 @@ li::marker {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: normal;
-  margin-right: 16px;
+  margin: 0px 16px 20px 0;
 }
 
 .itemsCostAndQuantity input {
@@ -540,19 +526,24 @@ li::marker {
   flex-wrap: nowrap;
   justify-content: space-between;
   color: #000000;
-  font-size: 18px;
-  margin-right: 16px;
+  align-items: center;
+  margin: 0 16px 0 0;
 }
 
+.costSum h1 {
+  font-size: 18px;
+}
+.costSum p {
+  font-size: 18px;
+}
+
+
 .submitDelivery {
-  margin-top: 0px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0px 15px 7px 15px;
   background-color:  transparent;
   border: none;
   height: 36px;
   font-size: 23px;
-  margin-bottom: 7px;
 }
 
 .submitDelivery:hover {
@@ -632,4 +623,50 @@ input[type=text]:focus, input[type=password]:focus {
 .Googlebtn {
   background-color: #ffffff;
   color: #171717;
+}
+
+@media screen and (max-width: 768px){
+  .onlineDeliver-menu-container {
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    padding: 4px;
+  }
+  
+  .cart {
+    flex: 1 1;
+    width: auto;
+    margin: 3px 1px 0 1px;
+  }
+  .categories {
+    display: none;
+  }
+
+  .text-header {
+    height: 200px;
+    width: 97%;
+  }
+
+  .image-button p{
+    font-size: 30px;
+    margin: 0;
+  }
+  .image-button p{
+    font-size: 30px;
+  }
+
+}
+
+@media screen and (max-width: 926px) {
+  .onlineDeliver-menu-container {
+    margin: 10px 0 0 0;
+    padding: 4px;
+  }
+  .cart {
+    flex: 1 1;
+    width: auto;
+    
+  }
+  .categories {
+    display: none;
+  }
 }
