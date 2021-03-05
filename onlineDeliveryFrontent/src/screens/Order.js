@@ -8,9 +8,6 @@ import Product from '../components/Product';
 export default function Order (){
     return (
         <div className="main-container">
-            <div className="modal-element">
-                
-            </div>
             <div className="image">
                 <img src={sushi}/>
             </div>
@@ -18,27 +15,24 @@ export default function Order (){
             <div className="onlineDeliver-menu-container">
                 <div className="categories">
                     <header><b>Categories</b></header>
-                    <a href="#"  id="myLink">
-                        <div className="">Sushi</div>
-                    </a>
-                    <a href="#" >
-                        <div className="">Salads</div>
-                    </a>
-                    <a href="#">
-                        <div className="">Starter</div>
-                    </a>
+                    {data["menu"].map((list) => (
+                        <a key={list.id}  href={"#"+list.name}  id="myLink">
+                            <div className="">{list.name}</div>
+                        </a>
+                    ))}
                 </div>
                 <div className="menu-specific">
-                    {(data["menu"].map((list) => (
+                    {data["menu"].map((list) => (
                         <div key={list.id} >
                             <header><b>{list.name}</b></header><hr/>
                             {  
                                 list.staff.map(element => (
                                     <Product key={element.id} element={element}></Product>
-                            ))}
+                                ))
+                            }
                         </div>
                         )
-                    ))}
+                    )}
                 </div>
             <div className="cart">
                 <h1><b>My Cart</b></h1>
