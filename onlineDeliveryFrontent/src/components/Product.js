@@ -22,7 +22,10 @@ class Product extends Component{
         const {element} = this.props;
         return (
             <div>
-                <Modal className="modal-item" overlayClassName="modal-overlay" isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
+                <Modal className="modal-item" overlayClassName="modal-overlay" 
+                    isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}
+                    appElement={document.getElementById('app')}
+                    ariaHideApp={false}>
                     <div className="modal-item-div">
                         <h1>{element.name}</h1>
                         <p>{element.description}</p>
@@ -30,11 +33,11 @@ class Product extends Component{
                         <textarea type="text" placeholder="Enter Extra" name="extra"></textarea>
                         <div className="modal-quantity">
                             <div className="quantity">
-                                <button class="plus-btn" type="button" name="button">
+                                <button className="plus-btn" type="button" name="button">
                                     <img src="plus.svg" alt="" />
                                 </button>
-                                <input type="text" className="modal-input" name="name" value="1"/>
-                                <button class="minus-btn" type="button" name="button">
+                                <input type="text" className="modal-input" name="name" placeholder="1"/>
+                                <button className="minus-btn" type="button" name="button">
                                     <img src="minus.svg" alt="" />
                                 </button>
                             </div>
