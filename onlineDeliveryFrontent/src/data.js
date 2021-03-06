@@ -53,7 +53,15 @@ const data = {
             ]
         },
     ],
-    
+    cart:[
+        {
+            id:'0',
+            name: 'template',
+            price: '100',
+            quantity: 1,
+            description: 'skata'
+        }
+    ]
 }
 
 export default data;

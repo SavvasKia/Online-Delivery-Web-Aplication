@@ -397,15 +397,26 @@ li::marker {
 }
 
 .minus-btn,.plus-btn {
-  background-color: #e1e1e1;
   border: none;
   border-radius: 3px;
   height: 45px;
   width: 45px;
+  margin-top: 5px;
 }
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  align-items:stretch;
+}
+
 
 .minus-btn:hover,.plus-btn:hover {
   background-color: #4d4d4d;
+}
+
+.minus-btn:focus,.plus-btn:focus {
+  outline: none;
 }
 
 .menu-specific::-webkit-scrollbar {
@@ -447,7 +458,7 @@ li::marker {
   font-size: 15px;
   font-weight: normal;
 }
-
+/*cart staff*/
 .cart {
   display: flex;
   flex-direction: column;
