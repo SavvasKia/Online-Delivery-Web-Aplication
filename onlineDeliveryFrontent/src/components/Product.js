@@ -7,6 +7,7 @@ import plusicon from "../images/plus.svg";
 
 //export default function Product(props) {
 class Product extends Component{
+    
     state = {
         modalIsOpen: false,
         quantity:1,
@@ -46,17 +47,22 @@ class Product extends Component{
         this.setState({ modalIsOpen: false });
     };
 
-    addToCart = () => {
-        console.log("add to cart start");
-        console.log(this.state.cost);
-        console.log(this.props.element.name);
-        console.log(this.props.element.description);
-        console.log(data.cartItems);
+    addToCartCB = () => {
+        this.props.handler(
+            {  
+                id:this.props.element.id,
+                name: this.props.element.name,
+                price: this.props.element.price,
+                cost: this.state.cost,
+                quantity: this.state.quantity,
+                description: this.props.element.description
+            }
+        );
+        this.setState({ modalIsOpen: false });
     }
     
     render() {
         const boolean=false;
-        const {element} = this.props;
         return (
             <div>
                 <Modal className="modal-item" overlayClassName="modal-overlay" 
@@ -64,8 +70,8 @@ class Product extends Component{
                     appElement={document.getElementById('app')}
                     ariaHideApp={false}>
                     <div className="modal-item-div">
-                        <h1>{element.name}</h1>
-                        <p>{element.description}</p>
+                        <h1>{this.props.element.name}</h1>
+                        <p>{this.props.element.description}</p>
                         <hr/>
                         <textarea type="text" placeholder="Enter Extra" name="extra"></textarea>
                         <div className="modal-quantity">
@@ -80,13 +86,13 @@ class Product extends Component{
                             </div>
                             <h1>{this.state.cost}$</h1>
                         </div>
-                        <button type="submit" onClick={this.addToCart} className="add-to-Cart"><b>Add Item</b></button>
+                        <button type="submit" onClick={this.addToCartCB} className="add-to-Cart"><b>Add Item</b></button>
                     </div>
                 </Modal>
-                <a href="#" id={element.id} key={element.id} className="product"
-                onClick={() => this.openModal(element)}  >
-                    <h1>{element.name}<span>{element.price}$</span></h1>
-                    <p>{element.description}</p> 
+                <a href="#" id={this.props.element.id} key={this.props.element.id} className="product"
+                onClick={() => this.openModal(this.props.element)}  >
+                    <h1>{this.props.element.name}<span>{this.props.element.price}$</span></h1>
+                    <p>{this.props.element.description}</p> 
                 </a>
             </div>
         );

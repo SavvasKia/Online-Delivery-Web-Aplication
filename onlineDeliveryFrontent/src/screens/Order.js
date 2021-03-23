@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useEffect} from 'react'
 import locationImage from '../images/location_icon.svg';
 import cancelIcon from '../images/Icons8-Ios7-Arrows-Forward.ico';
 import sushi from '../images/backgroundImage.jpg';
@@ -6,7 +6,54 @@ import data from '../data';
 import Product from '../components/Product';
 
 class Order extends Component{
+    constructor(props) {
+        super(props)
+      }
+
     state = data;
+    sum = 0;
+
+
+    handler = (val) => {
+        //first see if there is tha same item in the cart.
+        //then update or add 
+        if(this.state.cart.find( item => item.id == val.id) != undefined){
+            this.setState( prevState => (
+                {
+                    cart: prevState.cart.map(
+                        el => el.id === val.id? { ...el, quantity: el.quantity+val.quantity}: el
+                    )
+                }
+            ));
+        }else{
+            this.setState(
+                {
+                    cart: this.state.cart.concat(
+                        {
+                            id:val.id,
+                            name: val.name,
+                            price: val.cost,
+                            quantity: val.quantity,
+                            description: val.description
+                        }
+                )
+                }
+            );
+        }
+        this.sum+=val.quantity*val.cost;
+    }
+
+    removeItemFromCart = (item) => {
+        
+        this.setState(prevState => ({
+            cart: prevState.cart.filter(cart => cart.id !== item.id)
+        }));
+        this.sum -= item.quantity*item.price;
+    }
+
+    updateItem = (item) => {
+        // console.log(item);
+    }
 
     render() {
         return (
@@ -30,7 +77,7 @@ class Order extends Component{
                                 <header><b>{list.name}</b></header><hr/>
                                 {  
                                     list.staff.map(element => (
-                                        <Product key={element.id} element={element}></Product>
+                                        <Product key={element.id} element={element} handler={this.handler}></Product>
                                     ))
                                 }
                             </div>
@@ -53,21 +100,20 @@ class Order extends Component{
                             <div className="items" key={items.id}>
                                 <div className="item">
                                     <h1>{items.name}</h1>
-                                    <button type="button" className="cancelItem" onClick={()=>{ alert('alert'); }}></button>
+                                    <button type="button" className="cancelItem" onClick={ () => this.removeItemFromCart(items)}></button>
                                 </div>
                                 <p>{items.description}</p>
                                 <div className="itemsCostAndQuantity">
-                                    <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder={items.quantity}/> 
+                                    <var>x{items.quantity}</var>
                                     <var>{items.price}$</var>
                                 </div>
                             </div>
                             )
                         )}
-                    {/* </div> */}
                     <hr className="split"/>
                     <div className="costSum">
                         <h1>Cost</h1>
-                        <p>10$</p>
+                        <p>{this.sum}$</p>
                     </div>
                     <button type="button" className="submitDelivery" onClick={()=>{ alert('alert'); }}>Continue</button>
                     </div>

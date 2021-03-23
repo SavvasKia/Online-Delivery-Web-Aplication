@@ -54,43 +54,8 @@ const data = {
         },
     ],
     cart:[
-        {
-            id:'0',
-            name: 'template',
-            price: '100',
-            quantity: 1,
-            description: 'skata'
-        }
+        
     ]
 }
 
 export default data;
-/*
-
-    <div id="Salads">
-                        <header><b>Salads</b></header><hr/>
-                    </div>
-                    <div id="Starters">
-                        
-                    </div>
-    <h1>Ceasar <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-    
-    <h1>Greek <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-    
-    <h1>Green <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-</div>
-
-    <header><b>Starters</b></header><hr/>
-    <h1>French Fries <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-    
-    <h1>Pork belly <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-    
-    <h1>Imami <span>$15.50</span></h1>
-    <p>Four cheeses (mozzarella, pecorino, jarlsberg)</p>
-</div> 
-*/
